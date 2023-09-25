@@ -3,12 +3,21 @@ import { Text, TextInput } from "react-native";
 import { View, StyleSheet } from "react-native";
 
 function CounterCustomSet(props) {
+  console.log(props);
   const [customValue, setCustomValue] = useState(1);
-  const handleChange = () => {};
+  const handleChange = (text) => {
+    setCustomValue(parseInt(text));
+    props.setCustomValueParent(parseInt(text));
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Custom</Text>
-      <TextInput style={styles.counter} value={customValue} onChangeText={handleChange} />
+      <TextInput
+        style={styles.counter}
+        value={customValue.toString()}
+        onChangeText={handleChange}
+      />
     </View>
   );
 }

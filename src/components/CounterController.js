@@ -1,12 +1,12 @@
 import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 
-function CounterController({ setCounterValue }) {
+function CounterController({ setCounterValue, customValueParent }) {
   const onAdd = () => {
-    setCounterValue((prev) => prev + 1);
+    setCounterValue((prev) => prev + customValueParent);
   };
   const onSubtract = () => {
-    setCounterValue((prev) => prev - 1);
+    setCounterValue((prev) => prev - customValueParent);
   };
   return (
     <View style={styles.container}>

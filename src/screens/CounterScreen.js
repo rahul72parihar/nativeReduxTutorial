@@ -4,12 +4,12 @@ import CounterController from "../components/CounterController";
 import CounterView from "../components/CounterView";
 import { useState } from "react";
 
-export default function CounterScreen() {
+export default function CounterScreen({ customValueParent }) {
   const [counter, setCounter] = useState(0);
   return (
     <View style={styles.container}>
       <CounterView counterValue={counter} />
-      <CounterController setCounterValue={setCounter} />
+      <CounterController setCounterValue={setCounter} customValueParent={customValueParent} />
     </View>
   );
 }
